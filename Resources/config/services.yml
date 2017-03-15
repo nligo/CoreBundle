@@ -1,0 +1,48 @@
+parameters:
+    caipiao_url: http://api.caipiaokong.com/lottery
+    caipiao_name: bjpks
+    caipiao_format: json
+    caipiao_uid: 708843
+    caipiao_token: ef9071894118aa123fa5d495ef227b145ca0ea7a
+    caipiao_limit: 1
+#    SMS_BABY_URL: 'http://api.smsbao.com/'
+#    SMS_BABY_UESRNAME: lmgame
+#    SMS_BABY_PASSWORD: 123@qwe
+#    SMS_COMPANY: '捌跃科技'
+
+services:
+    cars_core.service_containeraware:
+        class: Cars\CoreBundle\Services\ContainerAware
+        abstract: true
+        calls:
+            - [ setContainer, [ '@service_container' ] ]
+
+    cars_core.service_getlottery:
+        class: Cars\CoreBundle\Services\GetLottery
+        parent:
+            cars_core.service_containeraware
+
+    cars_core.service_curl:
+        class: Cars\CoreBundle\Services\Curl
+        parent:
+            cars_core.service_containeraware
+
+
+    cars_core.manager_nperrecord:
+        class: Cars\CoreBundle\Manager\NperRecordManager
+        arguments:
+            em: "@doctrine.orm.entity_manager"
+            class: Cars\CoreBundle\Entity\NperRecord
+
+    cars_core.manager_user:
+        class: Cars\CoreBundle\Manager\UserManager
+        arguments:
+            em: "@doctrine.orm.entity_manager"
+            class: Cars\CoreBundle\Entity\User
+            conatiner: "@service_container"
+
+    cars_core.manager_userscorelog:
+        class: Cars\CoreBundle\Manager\UserScoreLogManager
+        arguments:
+            em: "@doctrine.orm.entity_manager"
+            class: Cars\CoreBundle\Entity\UserScoreLog
