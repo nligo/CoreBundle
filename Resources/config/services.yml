@@ -7,7 +7,7 @@ parameters:
 #    SMS_BABY_URL: ''
 #    SMS_BABY_UESRNAME: lmgame
 #    SMS_BABY_PASSWORD: 123@qwe
-#    SMS_COMPANY: '捌跃科技'
+#    SMS_COMPANY: '科技'
 
 services:
     cars_core.service_containeraware:
