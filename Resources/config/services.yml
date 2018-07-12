@@ -1,11 +1,10 @@
 parameters:
-    caipiao_url: http://api.caipiaokong.com/lottery
-    caipiao_name: bjpks
+    caipiao_url: ""
     caipiao_format: json
-    caipiao_uid: 708843
-    caipiao_token: ef9071894118aa123fa5d495ef227b145ca0ea7a
+    caipiao_uid: ""
+    caipiao_token: ""
     caipiao_limit: 1
-#    SMS_BABY_URL: 'http://api.smsbao.com/'
+#    SMS_BABY_URL: ''
 #    SMS_BABY_UESRNAME: lmgame
 #    SMS_BABY_PASSWORD: 123@qwe
 #    SMS_COMPANY: '捌跃科技'
